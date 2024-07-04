@@ -22,7 +22,7 @@ const AddTask = ({ addTask }) => {
         2,
         "0"
       )}`;
-      addTask({ title, description, endDate });
+      addTask({ title, description, endDate, priority });
       setTitle("");
       setDescription("");
       setDay("");
@@ -45,7 +45,7 @@ const AddTask = ({ addTask }) => {
   );
 
   return (
-    <div className="container " style={{ width: "100%" }}>
+    <div className="container " style={{ width: "80%" }}>
       <h2>Nouvelle Tache</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
@@ -71,7 +71,7 @@ const AddTask = ({ addTask }) => {
         </div>
 
         <div className="row mb-3">
-          <div className="col-2">
+          <div className="col-2 rounded-3">
             <label htmlFor="datedefin" className="form-label">
               Date de fin :
             </label>
@@ -139,7 +139,7 @@ const AddTask = ({ addTask }) => {
             <option value="Haut">Haut</option>
           </select>
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-secondary">
           Add Task
         </button>
       </form>

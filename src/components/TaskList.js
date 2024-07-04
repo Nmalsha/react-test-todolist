@@ -37,14 +37,21 @@ const TaskList = ({ tasks, toggleTask, deleteTask }) => (
                 >
                   {taskObj.description}
                 </p>
-                <small>{taskObj.endDate}</small>
+                <p
+                  className={`mb-1 ${
+                    taskObj.completed ? "text-decoration-line-through" : ""
+                  }`}
+                >
+                  Priority : {taskObj.priority}
+                </p>
+                <small>Date de fin : {taskObj.endDate}</small>
               </label>
             </div>
             <button
-              className="btn btn-danger btn-sm"
+              className="btn btn-secondary btn-sm"
               onClick={() => deleteTask(index)}
             >
-              Delete
+              Supprimer
             </button>
           </div>
         </li>
